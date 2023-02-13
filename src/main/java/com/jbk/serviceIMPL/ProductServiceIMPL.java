@@ -12,14 +12,14 @@ import com.jbk.service.ProductService;
 @Service
 public class ProductServiceIMPL implements ProductService {
 
-	//ProductDao dao = new ProductDaoIMPL();
-	
+	// ProductDao dao = new ProductDaoIMPL();
+
 	@Autowired
 	private ProductDao dao;
 
 	@Override
 	public boolean saveProduct(Product product) {
-		
+
 		boolean isAdded = dao.saveProduct(product);
 		return isAdded;
 	}
@@ -32,8 +32,8 @@ public class ProductServiceIMPL implements ProductService {
 
 	@Override
 	public boolean deleteProductById(long id) {
-		
-		return false;
+
+		return dao.deleteProductById(id);
 	}
 
 }
