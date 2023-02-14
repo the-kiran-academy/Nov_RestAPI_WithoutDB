@@ -10,30 +10,38 @@ import com.jbk.model.Product;
 import com.jbk.service.ProductService;
 
 @Service
-public class ProductServiceIMPL implements ProductService {
-
-	//ProductDao dao = new ProductDaoIMPL();
-	
+public class ProductServiceIMPL implements ProductService 
+{
 	@Autowired
 	private ProductDao dao;
 
 	@Override
-	public boolean saveProduct(Product product) {
-		
+	public boolean saveProduct(Product product) 
+	{
 		boolean isAdded = dao.saveProduct(product);
 		return isAdded;
 	}
+	
+	@Override
+	public Product getProductById(long productId) 
+	{
+		Product product = dao.getProductById(productId);
+		return product;
+	}
 
 	@Override
-	public List<Product> getProducts() {
+	public List<Product> getProducts() 
+	{
 		List<Product> products = dao.getProducts();
 		return products;
 	}
 
 	@Override
-	public boolean deleteProductById(long id) {
-		
-		return false;
+	public boolean deleteProductById(long productId) 
+	{
+		return dao.deleteProductById(productId);
 	}
+
+	
 
 }

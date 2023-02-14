@@ -14,32 +14,37 @@ import com.jbk.model.Product;
 import com.jbk.service.ProductService;
 
 @RestController
-public class ProductController {
-
-	// ProductService service = new ProductServiceIMPL();
-
+public class ProductController 
+{
 	@Autowired
 	private ProductService service;
 
-	@PostMapping(value = "/save-product")
-	public boolean saveProduct(@RequestBody Product product) {
-
+	@PostMapping(value = "/saveProduct")
+	public boolean saveProduct(@RequestBody Product product) 
+	{
 		boolean isAdded = service.saveProduct(product);
-
 		return isAdded;
-
 	}
+	
+	@GetMapping(value = "/getProductById/{productId}")
+	public Product getProductById(@PathVariable("productId") long productId)
+	{
+		Product product = service.getProductById(productId);
+		return product;
+	}
+	
 
-	@GetMapping(value = "/get-all-product")
-	public List<Product> getAllProduct() {
+	@GetMapping(value = "/getAllProducts")
+	public List<Product> getAllProduct() 
+	{
 		List<Product> products = service.getProducts();
 		return products;
 	}
 	
-	@DeleteMapping(value = "/delete-by-id/{id}")
-	public boolean deleteProductById(@PathVariable long id) {
-		return service.deleteProductById(id);
-		
+	@DeleteMapping(value = "/deleteProductById/{productId}")
+	public boolean deleteProductById(@PathVariable long productId) 
+	{
+		return service.deleteProductById(productId);	
 	}
 
 }
