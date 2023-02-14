@@ -10,5 +10,11 @@ public interface ProductService
 	public Product getProductById(long productId);
 	public List<Product> getProducts();
 	public boolean deleteProductById(long productId);
+	public List<Product> sortProductById_ASC();
+	public List<Product> sortProductById_DESC();
+	public Product getMaxPriceProduct();
+	public Double countSumOfProductPrice();
+	public Long getTotalCountOfProduct();
+
 
 }
