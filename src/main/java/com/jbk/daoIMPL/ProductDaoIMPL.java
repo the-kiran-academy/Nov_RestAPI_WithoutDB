@@ -2,9 +2,6 @@ package com.jbk.daoIMPL;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import org.springframework.stereotype.Repository;
 import com.jbk.dao.ProductDao;
 import com.jbk.model.Product;
