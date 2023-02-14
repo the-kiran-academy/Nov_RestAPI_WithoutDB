@@ -39,12 +39,12 @@ public class ProductDaoIMPL implements ProductDao {
 	@Override
 	public boolean deleteProductById(long id) {
 
-//		IntStream.range(0, list.size())
-//        .filter(i -> list.get(i).getProductId()==id)
-//        .boxed()
-//        .findFirst()
-//        .map(i -> list.remove((int) i));
-//		return true;
+		//		IntStream.range(0, list.size())
+		//        .filter(i -> list.get(i).getProductId()==id)
+		//        .boxed()
+		//        .findFirst()
+		//        .map(i -> list.remove((int) i));
+		//		return true;
 
 		boolean isDeleted = false;
 		try {
@@ -55,7 +55,26 @@ public class ProductDaoIMPL implements ProductDao {
 			isDeleted = false;
 		}
 		return isDeleted;
-
 	}
 
+	@Override
+	public boolean updateProduct(Product updatedProduct) 
+	{
+		try
+		{
+			for (Product product : list) 
+			{	
+				if(updatedProduct.getProductId()==product.getProductId())
+				{
+					int index=list.indexOf(product);
+					list.set(index, updatedProduct);
+					return true;
+				}
+			}
+		}catch(Exception e)
+		{
+			return false;
+		}
+		return false;
+	}
 }
