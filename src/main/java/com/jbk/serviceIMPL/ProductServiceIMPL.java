@@ -10,7 +10,6 @@ import com.jbk.service.ProductService;
 @Service
 public class ProductServiceIMPL implements ProductService 
 {
-public class ProductServiceIMPL implements ProductService {
 
 	// ProductDao dao = new ProductDaoIMPL();
 
@@ -21,7 +20,6 @@ public class ProductServiceIMPL implements ProductService {
 	@Override
 	public boolean saveProduct(Product product) 
 	{
-	public boolean saveProduct(Product product) {
 
 		boolean isAdded = dao.saveProduct(product);
 		return isAdded;

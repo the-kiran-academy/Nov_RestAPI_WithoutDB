@@ -39,11 +39,6 @@ public class ProductDaoIMPL implements ProductDao
 	@Override
 	public List<Product> getProducts() 
 	{
-		for (Product product : list) 
-		{
-			System.out.println(product);
-		}
-
 		return list;
 	}
 
