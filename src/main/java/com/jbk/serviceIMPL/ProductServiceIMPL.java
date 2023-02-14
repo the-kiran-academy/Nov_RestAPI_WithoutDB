@@ -45,6 +45,10 @@ public class ProductServiceIMPL implements ProductService
 		return dao.deleteProductById(id);
 	}
 
-	
+	public boolean updateProduct(Product product) {
+		boolean isUpdated=dao.updateProduct(product);
+		return isUpdated;
+		
+	}
 
 }

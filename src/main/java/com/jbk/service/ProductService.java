@@ -10,5 +10,5 @@ public interface ProductService
 	public Product getProductById(long productId);
 	public List<Product> getProducts();
 	public boolean deleteProductById(long productId);
-
+    public boolean updateProduct(Product product);
 }

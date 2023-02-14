@@ -11,5 +11,6 @@ public interface ProductDao
 	public Product getProductById(long productById);
 	public List<Product> getProducts();
 	public boolean deleteProductById(long productId);
+	 public boolean updateProduct(Product product);
 
 }

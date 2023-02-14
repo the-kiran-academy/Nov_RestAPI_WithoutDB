@@ -48,6 +48,11 @@ public class ProductController
 		return service.deleteProductById(productId);	
 	}
 	
-	//@PutMapping
+	@PutMapping("updateProduct")
+	public boolean updateProduct(@RequestBody Product product) {
+		boolean isUpdated=service.updateProduct(product);
+		return isUpdated;
+		
+	}
 
 }
