@@ -79,8 +79,8 @@ public class ProductController
 	@GetMapping(value = "/get-totalcountof-Product")
 	public Long getTotalCountOfProduct() {
 		Long totalCountOfProduct = service.getTotalCountOfProduct();
+		System.out.println(totalCountOfProduct);
 		return totalCountOfProduct;
 		
 	}
-
 }
