@@ -1,5 +1,6 @@
 package com.jbk.serviceIMPL;
 
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -69,6 +70,25 @@ public class ProductServiceIMPL implements ProductService {
 		Long totalCountOfProduct = dao.getTotalCountOfProduct();
 		
 		return totalCountOfProduct;
+	}
+
+	@Override
+	public int getProductCountStartsWithProductName_P() {
+		int productCount = dao.getProductCountStartsWithProductName_P();
+		System.out.println(productCount);
+		return productCount;
+	}
+
+	@Override
+	public Double averageOfProductPrice() {
+		Double average = dao.averageOfProductPrice();
+		return average;
+	}
+
+	@Override
+	public DoubleSummaryStatistics SummaryOfProduct() {
+		DoubleSummaryStatistics summaryStatistics = dao.SummaryOfProduct();
+		return summaryStatistics;
 	}
 
 }

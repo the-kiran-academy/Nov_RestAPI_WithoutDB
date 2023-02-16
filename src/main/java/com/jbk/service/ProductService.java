@@ -1,5 +1,6 @@
 package com.jbk.service;
 
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import com.jbk.model.Product;
 
@@ -15,6 +16,9 @@ public interface ProductService
 	public Product getMaxPriceProduct();
 	public Double countSumOfProductPrice();
 	public Long getTotalCountOfProduct();
+	public int getProductCountStartsWithProductName_P();
+	public Double averageOfProductPrice();
+	public DoubleSummaryStatistics SummaryOfProduct();
 
 
 }

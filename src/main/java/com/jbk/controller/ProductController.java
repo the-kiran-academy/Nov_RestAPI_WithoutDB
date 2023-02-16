@@ -1,5 +1,6 @@
 package com.jbk.controller;
 
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,28 @@ public class ProductController
 		Long totalCountOfProduct = service.getTotalCountOfProduct();
 		System.out.println(totalCountOfProduct);
 		return totalCountOfProduct;
+		
+	}
+		
+	@GetMapping(value = "/get-ProductCount-StartsWithProductName_P")
+	public int getProductStartsWithProductName_P() {
+		int productCount = service.getProductCountStartsWithProductName_P();
+		System.out.println(productCount);
+		return productCount;
+		
+	}
+	
+	@GetMapping(value = "/averageOfproductprice")
+	public Double averageOfProductPrice() {
+		Double average = service.averageOfProductPrice();
+		return average;
+		
+	}
+	
+	@GetMapping(value = "/SummaryOfProduct")
+	public DoubleSummaryStatistics SummaryOfProduct() {
+		DoubleSummaryStatistics summaryStatistics = service.SummaryOfProduct();
+		return summaryStatistics;
 		
 	}
 }
