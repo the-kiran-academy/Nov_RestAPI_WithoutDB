@@ -2,10 +2,13 @@ package com.jbk.daoIMPL;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import com.jbk.dao.ProductDao;
@@ -106,6 +109,25 @@ public class ProductDaoIMPL implements ProductDao {
 	public Long getTotalCountOfProduct() {
 		Long totalCountOfProduct = list.stream().count();
 		return totalCountOfProduct;
+	}
+
+	@Override
+	public int getProductCountStartsWithProductName_P() {
+			int productCount = (int) list.stream().filter(c -> c.getProductName().startsWith("P")).count();
+			return productCount;	
+		
+	}
+
+	@Override
+	public Double averageOfProductPrice() {
+		double average = list.stream().mapToDouble(a -> a.getProductPrice()).average().orElse(0);
+		return average;
+	}
+
+	@Override
+	public DoubleSummaryStatistics SummaryOfProduct() {
+		DoubleSummaryStatistics summaryStatistics = list.stream().mapToDouble(s -> s.getProductPrice()).summaryStatistics();
+		return summaryStatistics;
 	}
 
 }
