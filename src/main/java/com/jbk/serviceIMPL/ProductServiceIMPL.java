@@ -71,4 +71,10 @@ public class ProductServiceIMPL implements ProductService {
 		return totalCountOfProduct;
 	}
 
+	@Override
+	public Product updateProduct(Product product) {
+		Product updatedProduct = dao.updateProduct(product);
+		return updatedProduct;
+	}
+
 }
