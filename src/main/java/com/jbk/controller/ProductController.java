@@ -83,4 +83,9 @@ public class ProductController
 		return totalCountOfProduct;
 		
 	}
+	public boolean getValue()
+	{
+		return true;
+	}
+	
 }

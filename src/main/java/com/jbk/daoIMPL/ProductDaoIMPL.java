@@ -63,17 +63,17 @@ public class ProductDaoIMPL implements ProductDao {
 
 	@Override
 	public List<Product> sortProductById_ASC() {
-
+		List<Product> sortedProductList_ASC=null;
 		try {
-			List<Product> sortedProductList_ASC = list.stream()
+			 sortedProductList_ASC= list.stream()
 					.sorted((p1, p2) -> ((Long) p1.getProductId()).compareTo(p2.getProductId()))
 					.collect(Collectors.toList());
-			return sortedProductList_ASC;
+			
 		} catch (Exception e) {
+			
 			return null;
-
 		}
-
+		return sortedProductList_ASC;
 	}
 
 	@Override
