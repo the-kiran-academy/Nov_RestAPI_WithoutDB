@@ -54,7 +54,7 @@ public class ProductDaoIMPL implements ProductDao {
 		try {
 			Product product = list.stream().filter(listProduct -> listProduct.getProductId() == id).findFirst().get();
 			list.remove(product);
-			isDeleted = true;
+			isDeleted= true;
 		} catch (NoSuchElementException e) {
 			isDeleted = false;
 		}

@@ -18,8 +18,8 @@ public class ProductServiceIMPL implements ProductService {
 	@Override
 	public boolean saveProduct(Product product) {
 
-		boolean isAdded = dao.saveProduct(product);
-		return isAdded;
+		boolean isAdd = dao.saveProduct(product);
+		return isAdd;
 	}
 
 	@Override
