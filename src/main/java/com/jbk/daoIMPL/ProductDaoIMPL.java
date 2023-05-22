@@ -80,8 +80,8 @@ public class ProductDaoIMPL implements ProductDao {
 	public List<Product> sortProductById_DESC() {
 		try {
 			List<Product> sortProductById_ASC = list.stream()
-					.sorted((p1, p2) -> ((Long) p2.getProductId()).compareTo(p1.getProductId()))
-					.collect(Collectors.toList());
+			.sorted((p1, p2) -> ((Long) p2.getProductId()).compareTo(p1.getProductId()))
+			.collect(Collectors.toList());
 			return sortProductById_ASC;
 		} catch (Exception e) {
 			return null;
