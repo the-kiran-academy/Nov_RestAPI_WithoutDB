@@ -23,8 +23,8 @@ public class ProductController
 	@PostMapping(value = "/saveProduct")
 	public boolean saveProduct(@RequestBody Product product) 
 	{
-		boolean isAdded = service.saveProduct(product);
-		return isAdded;
+		boolean isAdd = service.saveProduct(product);
+		return isAdd;
 	}
 	
 	@GetMapping(value = "/getProductById/{productId}")
