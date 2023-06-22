@@ -60,7 +60,18 @@ public class ProductDaoIMPL implements ProductDao {
 		}
 		return isDeleted;
 	}
-
+	public boolean updateProduct(Product product) {
+		list.stream().filter((pro)->pro.getProductId()==product.getProductId()).forEach((pro)->{
+			pro.setProductId(product.getProductId());
+			pro.setProductName(product.getProductName());
+			pro.setSupplierId(product.getSupplierId());
+			pro.setCategoryId(product.getCategoryId());
+			pro.setProductQTY(product.getProductQTY());
+			pro.setProductPrice(product.getProductPrice());
+	});
+	
+		return true;
+  }	
 	@Override
 	public List<Product> sortProductById_ASC() {
 

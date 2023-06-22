@@ -39,7 +39,10 @@ public class ProductServiceIMPL implements ProductService {
 
 		return dao.deleteProductById(id);
 	}
-
+	public boolean updateProduct(Product product) {
+		boolean isUpdated=dao.updateProduct(product);
+		return isUpdated;
+  }
 	@Override
 	public List<Product> sortProductById_ASC() {
 		List<Product> sortProductById_ASC = dao.sortProductById_ASC();
