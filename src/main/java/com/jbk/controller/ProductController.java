@@ -83,4 +83,10 @@ public class ProductController
 		return totalCountOfProduct;
 		
 	}
+	@PutMapping(value="/update-product")
+	public Product updateProduct(@RequestBody Product product) {
+		Product updatedProduct = service.updateProduct(product);
+		return updatedProduct;
+	}
+	
 }

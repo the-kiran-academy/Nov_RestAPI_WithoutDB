@@ -108,4 +108,29 @@ public class ProductDaoIMPL implements ProductDao {
 		return totalCountOfProduct;
 	}
 
+	@Override
+	public Product updateProduct(Product product) {
+		long productIdToUpdate=0;
+		long productId = 0;
+		
+		for (int i = 0; i < list.size(); i++) {
+			if(list.get(i).getProductId()==product.getProductId()) {
+			productId=product.getProductId();
+			productIdToUpdate=productId;
+			break;
+			}
+		}
+		Product updatedProduct = new Product();
+		updatedProduct.setProductId(productId);
+		updatedProduct.setProductName(product.getProductName());
+		updatedProduct.setCategoryId(product.getCategoryId());
+		updatedProduct.setProductPrice(product.getProductPrice());
+		updatedProduct.setProductQTY(product.getProductQTY());
+		updatedProduct.setSupplierId(product.getSupplierId());
+		list.set((int) productIdToUpdate, product);
+		
+		return updatedProduct;
+	}
+	
+
 }
